@@ -1,8 +1,10 @@
 @import "./variables/font-size";
+@import "./reset";
 @import "./mixins/screens";
 
 .jkl-title-large {
     @include jkl-text-style("desktop/title-large");
+    @include reset-heading;
 
     @include small-device {
         @include jkl-text-style("compact/title-large");
@@ -13,6 +15,7 @@
 }
 .jkl-title-small {
     @include jkl-text-style("desktop/title-small");
+    @include reset-heading;
 
     @include small-device {
         @include jkl-text-style("compact/title-small");
@@ -23,6 +26,7 @@
 }
 .jkl-heading-large {
     @include jkl-text-style("desktop/heading-large");
+    @include reset-heading;
 
     @include small-device {
         @include jkl-text-style("compact/heading-large");
@@ -33,6 +37,7 @@
 }
 .jkl-heading-medium {
     @include jkl-text-style("desktop/heading-medium");
+    @include reset-heading;
 
     @include small-device {
         @include jkl-text-style("compact/heading-medium");
@@ -43,6 +48,7 @@
 }
 .jkl-heading-small {
     @include jkl-text-style("desktop/heading-small");
+    @include reset-heading;
 
     @include small-device {
         @include jkl-text-style("compact/heading-small");

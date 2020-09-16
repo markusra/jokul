@@ -6,14 +6,24 @@
  * such as `p` and headings
  */
 
+@mixin reset-paragraph {
+    margin: 0;
+}
+@mixin reset-heading {
+    margin: 0;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+    @include reset-heading();
+}
+
 p {
-    margin: 0;
+    @include reset-paragraph();
 }
 
 /* Forms
@@ -23,7 +33,7 @@ p {
  * Remove margins from fieldset element.
  */
 
-fieldset {
+@mixin reset-fieldset {
     margin: 0;
     border: 0;
     padding: 0;
@@ -31,27 +41,35 @@ fieldset {
     line-height: 1;
 }
 
+fieldset {
+    @include reset-fieldset();
+}
+
 /* Forms
    ========================================================================== */
 
 /**
- * Remove borders from table elements.
+ * Remove borders and margins from table elements.
  */
 
-table {
+@mixin reset-table {
     border-collapse: collapse;
 }
 
-/**
- * Remove margins from table elements.
- */
+@mixin reset-table-content {
+    margin: 0;
+    padding: 0;
+}
 
-table,
+table {
+    @include reset-table();
+    @include reset-table-content();
+}
+
 thead,
 tbody,
 tr,
 td,
 th {
-    margin: 0;
-    padding: 0;
+    @include reset-table-content();
 }

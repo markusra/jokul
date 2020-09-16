@@ -1,4 +1,5 @@
 @import "~@fremtind/jkl-core/variables/_all.scss";
+@import "~@fremtind/jkl-core/reset.scss";
 
 $bottom-border-size: rem(1px);
 $highlight-color: $hvit;
@@ -6,8 +7,14 @@ $cell-padding: $component-spacing--xl $component-spacing--small;
 $row-end-padding: $component-spacing--large;
 
 .jkl-table {
-    border-collapse: collapse;
+    @include reset-table;
     @include jkl-text-style("desktop/small");
+
+    &__heading,
+    &__data-cell,
+    &__row {
+        @include reset-table-content;
+    }
 
     &__heading {
         color: $gra-80;

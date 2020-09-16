@@ -1,8 +1,10 @@
 @import "./variables/font-size";
+@import "./reset";
 @import "./mixins/screens";
 
 .jkl-lead {
     @include jkl-text-style("desktop/lead");
+    @include reset-paragraph;
 
     @include small-device {
         @include jkl-text-style("compact/lead");
@@ -14,6 +16,7 @@
 
 .jkl-body {
     @include jkl-text-style("desktop/body");
+    @include reset-paragraph;
 
     @include small-device {
         @include jkl-text-style("compact/body");
@@ -25,6 +28,7 @@
 
 .jkl-small {
     @include jkl-text-style("desktop/small");
+    @include reset-paragraph;
 
     @include small-device {
         @include jkl-text-style("compact/small");
@@ -36,6 +40,7 @@
 
 .jkl-micro {
     @include jkl-text-style("desktop/micro");
+    @include reset-paragraph;
 
     @include small-device {
         @include jkl-text-style("compact/micro");

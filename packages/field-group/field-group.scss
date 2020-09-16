@@ -1,5 +1,7 @@
 @import "~@fremtind/jkl-core/mixins/_helpers.scss";
+@import "~@fremtind/jkl-core/reset.scss";
 
 .jkl-field-group {
     @include reset-outline;
+    @include reset-fieldset;
 }
