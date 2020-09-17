@@ -1,7 +1,7 @@
 import React, { ImgHTMLAttributes, useState, useRef } from "react";
 import { withPrefix } from "gatsby";
 import { motion, AnimatePresence } from "framer-motion";
-import "./style.scss";
+import "./PortalImg.scss";
 import { useKeyListener } from "@fremtind/jkl-react-hooks";
 
 interface Props extends ImgHTMLAttributes<HTMLImageElement> {
@@ -28,17 +28,14 @@ export const PortalImg: React.FC<Props> = ({ src, alt, noMargin }) => {
                 layout
                 onClick={toggleFullscreen}
                 className={`jkl-portal-image ${noMargin ? "jkl-portal-image--no-margin" : ""} ${
-                    isFullscreen ? "jkl-portal-image--fullscreen" : "jkl-portal-paragraph"
+                    isFullscreen ? "jkl-portal-image--fullscreen" : ""
                 }`}
             >
                 <Image imgSrc={imgSrc} alt={alt} />
                 {!isFullscreen && !noMargin && <div className="jkl-micro">Klikk for å se større</div>}
             </motion.button>
             {isFullscreen && (
-                <button
-                    aria-hidden
-                    className={`jkl-portal-image jkl-portal-paragraph ${noMargin ? "jkl-portal-image--no-margin" : ""}`}
-                >
+                <button aria-hidden className={`jkl-portal-image ${noMargin ? "jkl-portal-image--no-margin" : ""}`}>
                     <Image imgSrc={imgSrc} />
                     {!noMargin && <div className="jkl-micro">&nbsp;</div>}
                 </button>
