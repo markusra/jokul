@@ -13,6 +13,9 @@ import "./Layout.scss";
 
 interface Props {
     location: Location;
+    pageContext?: {
+        layout?: string;
+    };
     pathContext?: {
         frontmatter?: {
             title?: string;
@@ -20,7 +23,7 @@ interface Props {
     };
 }
 
-export const Layout: React.FC<Props> = ({ children, location, pathContext, ...rest }) => {
+export const Layout: React.FC<Props> = ({ children, location, pathContext, pageContext }) => {
     const { setLocation, isFrontPage, isCypress } = useLocation();
     useEffect(() => setLocation(location), [location, setLocation]);
 
@@ -38,6 +41,15 @@ export const Layout: React.FC<Props> = ({ children, location, pathContext, ...re
 
     if (isCypress) {
         return <FormatProvider>{children}</FormatProvider>;
+    }
+
+    if (pageContext?.layout === "meetup") {
+        return (
+            <div className="jkl-portal" data-theme={theme} ref={wrapperRef}>
+                <ThemeBG />
+                <FormatProvider>{children}</FormatProvider>
+            </div>
+        );
     }
 
     return (
