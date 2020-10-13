@@ -1,6 +1,9 @@
 /* eslint-disable */
+
+const pathPrefix = process.env.GATSBY_PATH_PREFIX || "";
+
 module.exports = {
-    pathPrefix: "/jokul",
+    pathPrefix,
     siteMetadata: {
         title: `Jøkul`,
         description: `Jøkul er designsystemet til Fremtind`,
@@ -54,8 +57,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-layout`,
             options: {
-              component: require.resolve(`./src/components/Layout/Layout.tsx`),
+                component: require.resolve(`./src/components/Layout/Layout.tsx`),
             },
-          },
+        },
     ],
 };
