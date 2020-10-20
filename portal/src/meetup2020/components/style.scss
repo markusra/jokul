@@ -63,13 +63,17 @@
     &.meetup-speakers__slogan {
         font-size: 48px;
         line-height: 56px;
+        margin: 25px 0;
     }
     &.meetup-speakers__image {
         width: 40%;
         max-width: 480px;
         position: absolute;
-        top: 85px;
+        top: 75px;
         z-index: 2;
+        &.meetup-speakers__image--inverted {
+            right: 0;
+        }
     }
     &.meetup-speakers__content {
         position: absolute;
@@ -78,16 +82,34 @@
         max-width: 880px;
         width: 74%;
         background: #181818;
+        &.meetup-speakers__content--inverted {
+            right: auto;
+            left: 0;
+        }
     }
     &.meetup-speakers__contentbox {
         padding-left: 34%;
         padding-top: 13%;
         padding-bottom: 13%;
         padding-right: 16%;
+        &.meetup-speakers__contentbox--inverted {
+            padding-left: 16%;
+            padding-right: 34%;
+        }
+    }
+    &.meetup-speakers__links-social {
+        margin: 25px 0;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    &.meetup-speakers__social-icon {
+        margin: 0 12px;
     }
     &.meetup-speakers__link-link {
         color: white;
-        text-decoration: underline;
+        text-decoration: none;
+        padding-bottom: 12px;
+        border-bottom: white 2px solid;
     }
 }
 

@@ -14,6 +14,7 @@ type SpeakerProps = {
     youtube?: string;
     twitter?: string;
     medium?: string;
+    inverted?: boolean;
 };
 
 const Speaker: FunctionComponent<SpeakerProps> = ({
@@ -29,70 +30,104 @@ const Speaker: FunctionComponent<SpeakerProps> = ({
     youtube,
     twitter,
     medium,
-}) => (
-    <div className="meetup-speakers meetup-speakers__wrapper">
-        <img src={image} className="meetup-speakers meetup-speakers__image" alt={name} />
-        <div className="meetup-speakers meetup-speakers__content">
-            <div className="meetup-speakers meetup-speakers__contentbox">
-                <h2>{name}</h2>
-                <p>
-                    {title}
-                    <br />
-                    {location}
-                </p>
-                <p className="meetup-speakers meetup-speakers__slogan">{slogan}</p>
-                <p>{bio}</p>
-                <div className="row">
-                    {webpage && (
-                        <div className="meetup-speakers meetup-speakers__link-wrapper">
-                            <a
-                                className="meetup-speakers meetup-speakers__link-link"
-                                href={webpage}
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                {webpage}
-                            </a>
+    inverted,
+}) => {
+    const ImageClasses = inverted
+        ? "meetup-speakers meetup-speakers__image meetup-speakers__image--inverted"
+        : "meetup-speakers meetup-speakers__image";
+    const ContentClasses = inverted
+        ? "meetup-speakers meetup-speakers__content meetup-speakers__content--inverted"
+        : "meetup-speakers meetup-speakers__content";
+    const ContentboxClasses = inverted
+        ? "meetup-speakers meetup-speakers__contentbox meetup-speakers__contentbox--inverted"
+        : "meetup-speakers meetup-speakers__contentbox";
+    return (
+        <section className="meetup-speakers meetup-speakers__wrapper">
+            <img src={image} className={ImageClasses} alt={name} />
+            <div className={ContentClasses}>
+                <div className={ContentboxClasses}>
+                    <h2>{name}</h2>
+                    <p>
+                        {title}
+                        <br />
+                        {location}
+                    </p>
+                    <p className="meetup-speakers meetup-speakers__slogan">{slogan}</p>
+                    <p>{bio}</p>
+                    <div className="row">
+                        <div className="meetup-speakers meetup-speakers__links-social">
+                            {webpage && (
+                                <div className="meetup-speakers meetup-speakers__link-wrapper">
+                                    <a
+                                        className="meetup-speakers meetup-speakers__link-link"
+                                        href={webpage}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        {webpage}
+                                    </a>
+                                </div>
+                            )}
+                            <div className="meetup-speakers meetup-speakers__social">
+                                {linkedin && (
+                                    <a href={linkedin} title="LinkedIn" target="_blank" rel="noreferrer">
+                                        <img
+                                            className="meetup-speakers meetup-speakers__social-icon"
+                                            src="assets/img/social-in.svg"
+                                            alt="social icon linkedin"
+                                        />
+                                    </a>
+                                )}
+                                {facebook && (
+                                    <a href={facebook} title="Facebook" target="_blank" rel="noreferrer">
+                                        <img
+                                            className="meetup-speakers meetup-speakers__social-icon"
+                                            src="assets/img/social-face.svg"
+                                            alt="social icon facebook"
+                                        />
+                                    </a>
+                                )}
+                                {youtube && (
+                                    <a href={youtube} title="youtube" target="_blank" rel="noreferrer">
+                                        <img
+                                            className="meetup-speakers meetup-speakers__social-icon"
+                                            src="assets/img/social-tube.svg"
+                                            alt="social icon youtube"
+                                        />
+                                    </a>
+                                )}
+                                {twitter && (
+                                    <a href={twitter} title="twitter" target="_blank" rel="noreferrer">
+                                        <img
+                                            className="meetup-speakers meetup-speakers__social-icon"
+                                            src="assets/img/social-twitter.svg"
+                                            alt="social icon twitter"
+                                        />
+                                    </a>
+                                )}
+                                {medium && (
+                                    <a href={medium} title="youtube" target="_blank" rel="noreferrer">
+                                        <img
+                                            className="meetup-speakers meetup-speakers__social-icon"
+                                            src="assets/img/social-medium.svg"
+                                            alt="social icon medium"
+                                        />
+                                    </a>
+                                )}
+                            </div>
                         </div>
-                    )}
-                    <div className="meetup-speakers meetup-speakers__social">
-                        {linkedin && (
-                            <a href={linkedin} title="LinkedIn" target="_blank" rel="noreferrer">
-                                <img src="assets/img/social-in.svg" alt="social icon linkedin" />
-                            </a>
-                        )}
-                        {facebook && (
-                            <a href={facebook} title="Facebook" target="_blank" rel="noreferrer">
-                                <img src="assets/img/social-face.svg" alt="social icon facebook" />
-                            </a>
-                        )}
-                        {youtube && (
-                            <a href={youtube} title="youtube" target="_blank" rel="noreferrer">
-                                <img src="assets/img/social-tube.svg" alt="social icon youtube" />
-                            </a>
-                        )}
-                        {twitter && (
-                            <a href={twitter} title="twitter" target="_blank" rel="noreferrer">
-                                <img src="assets/img/social-twitter.svg" alt="social icon twitter" />
-                            </a>
-                        )}
-                        {medium && (
-                            <a href={medium} title="youtube" target="_blank" rel="noreferrer">
-                                <img src="assets/img/social-medium.svg" alt="social icon medium" />
-                            </a>
-                        )}
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-);
+        </section>
+    );
+};
 
 const Speakers = () => {
     return (
         <div className="row row--topmargin">
-            <h1>Main Speakers</h1>
-            <section className="meetup-speakers">
+            <article className="meetup-speakers">
+                <h1>Main Speakers</h1>
                 <Speaker
                     image="assets/img/speaker-morgane-big.jpg"
                     name="Morgane Peng"
@@ -114,6 +149,7 @@ const Speakers = () => {
                     bio="Owner and founder of Parsley Design Systems, a design system tool and methodology for implementing and maintaining efficient design operations in both agencies and complex corporate/Government environments. "
                     webpage="mikehallportfolio.wordpress.com"
                     linkedin="https://www.linkedin.com/in/mikehall/"
+                    inverted
                 />
                 <Speaker
                     image="assets/img/speaker-glenn-big.jpg"
@@ -124,7 +160,7 @@ const Speakers = () => {
                     bio="Experienced senior software developer and architect. Focusing mainly on frontend while maintaining a solid perspective on the whole stack; including native mobile clients."
                     linkedin="https://www.linkedin.com/in/gbrownlee/"
                 />
-            </section>
+            </article>
         </div>
     );
 };
