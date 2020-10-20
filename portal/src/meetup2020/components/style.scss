@@ -130,20 +130,22 @@
 
 .meetup-paneldebate {
     &.meetup-paneldebate__slogan {
+        margin: 40px 100px;
     }
     &.meetup-paneldebate__grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto;
         grid-gap: 0;
-        background-color: #2196f3;
         padding: 0;
         &.meetup-paneldebate__item1 {
+            height: 472px;
             grid-area: 1 / 1 / span 3 / span 1;
         }
         grid-template-columns: 472px 236px 236px 236px;
     }
     .meetup-paneldebate__item {
         position: relative;
+        height: 236px;
     }
     .meetup-paneldebate__image--small {
         width: 236px;
