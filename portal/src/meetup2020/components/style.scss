@@ -1,7 +1,127 @@
 @import "~@fremtind/jkl-core/variables/_all.scss";
 
 .meetup-hero {
-    background-color: $varde-50;
-    width: 100%;
-    padding: $layout-spacing--large;
+    &.meetup-hero__wrapper {
+        background-color: none;
+        width: 100%;
+        padding: 1rem;
+        height: 100px;
+    }
+    &.meetup-hero__heading {
+        color: white;
+        font-size: 24px;
+        float: left;
+    }
+    &.meetup-hero__button {
+        float: right;
+    }
+}
+
+.meetup-welcome {
+    &.meetup-welcome__wrapper {
+        color: white;
+        margin-left: 126px;
+        width: 420px;
+        margin-top: 130px;
+    }
+    &.meetup-welcome__meeup {
+        display: block;
+    }
+    &.meetup-welcome__good {
+        display: block;
+        font-size: 80px;
+        line-height: 120px;
+    }
+    &.meetup-welcome__bad {
+        display: block;
+        font-size: 80px;
+        line-height: 120px;
+    }
+    &.meetup-welcome__ugly {
+        display: block;
+        font-size: 80px;
+        line-height: 120px;
+    }
+    &.meetup-welcome__time {
+        display: block;
+    }
+}
+
+.meetup-play {
+    &.meetup-play__button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.meetup-speakers {
+    &.meetup-speakers__wrapper {
+        position: relative;
+        min-height: 660px;
+    }
+    &.meetup-speakers__slogan {
+        font-size: 48px;
+        line-height: 56px;
+    }
+    &.meetup-speakers__image {
+        width: 40%;
+        max-width: 480px;
+        position: absolute;
+        top: 85px;
+        z-index: 2;
+    }
+    &.meetup-speakers__content {
+        position: absolute;
+        right: 0;
+        top: 0;
+        max-width: 880px;
+        width: 74%;
+        background: #181818;
+    }
+    &.meetup-speakers__contentbox {
+        padding-left: 34%;
+        padding-top: 13%;
+        padding-bottom: 13%;
+        padding-right: 16%;
+    }
+    &.meetup-speakers__link-link {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+.meetup-paneldebate {
+    &.meetup-paneldebate__slogan {
+    }
+    &.meetup-paneldebate__grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 0;
+        background-color: #2196f3;
+        padding: 0;
+        &.meetup-paneldebate__item1 {
+            grid-area: 1 / 1 / span 3 / span 1;
+        }
+        grid-template-columns: 472px 236px 236px 236px;
+    }
+    .meetup-paneldebate__item {
+        position: relative;
+    }
+    .meetup-paneldebate__image--small {
+        width: 236px;
+        height: auto;
+    }
+    .meetup-paneldebate__image--big {
+        width: 472px;
+        height: auto;
+    }
+    .meetup-paneldebate__caption {
+        background: black;
+        color: white;
+        padding: 0.5rem;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+    }
 }

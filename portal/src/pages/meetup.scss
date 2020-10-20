@@ -1,0 +1,65 @@
+body,
+html {
+    background: black;
+    height: 100%;
+}
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    color: white;
+}
+.row {
+    display: inline-table;
+    width: 100%;
+    &.row--topmargin {
+        margin-top: 2rem;
+    }
+}
+
+.jkl-portal {
+    background: none;
+    display: block;
+}
+.body-wrapper {
+    /* max-width: 1440px; */
+}
+
+.meetup-main {
+    width: 100wv;
+    /* max-width: 1180px; */
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    @media only screen and (max-width: 1180px) {
+        display: table-cell;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+body {
+    color: white;
+    /* Location of the image */
+    background-image: url(../../static/assets/img/bg-image.png);
+
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+
+    /* Background image is fixed in the viewport so that it doesn't move when 
+       the content's height is greater than the image's height */
+    /*   background-attachment: fixed; */
+
+    /* This is what makes the background image rescale based
+       on the container's size */
+    background-size: cover;
+
+    /* Set a background color that will be displayed
+       while the background image is loading */
+    background-color: #464646;
+}

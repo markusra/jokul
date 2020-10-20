@@ -27,7 +27,7 @@ exports.onCreatePage = async ({ page, actions }) => {
         makePage(pageSpecifiedPath);
     }
 
-    if (page.path.match(/meetup2020/)) {
+    if (page.path.match(/meetup/)) {
         page.context.layout = "meetup";
         createPage(page);
     }
