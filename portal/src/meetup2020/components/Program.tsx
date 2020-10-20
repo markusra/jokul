@@ -3,11 +3,15 @@ import "./style.scss";
 
 const Program = () => {
     return (
-        <div className="row row--topmargin">
+        <div className="row jkl-layout-spacing--xl-top">
             <article className="meetup-program">
-                <h1>Date & Time</h1>
-                <h2>4th of November, 2020, Time: 1.00pm UK, 2.00pm Oslo, 10.00pm Sidney</h2>
-                <table className="jkl-table helloworld">
+                <h2 className="jkl-title-small jkl-component-spacing--large-bottom">Date & Time</h2>
+                <h3 className="jkl-body">
+                    November 4th, 2020,
+                    <br />
+                    1.00 pm (UK), 2.00 pm (Oslo), 10.00 pm (Sidney)
+                </h3>
+                <table className="meetup-program__table jkl-table jkl-layout-spacing--large-top">
                     <thead>
                         <tr className="jkl-table__row">
                             <th className="jkl-table__heading">Time</th>

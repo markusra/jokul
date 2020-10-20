@@ -3,9 +3,9 @@ import "./style.scss";
 
 const Sponsor = () => {
     return (
-        <div className="row row--topmargin">
+        <div className="row jkl-layout-spacing--large-top">
             <article className="meetup-sponsor">
-                <h1>Sponsor</h1>
+                <h2 className="jkl-heading-medium">Sponsor</h2>
                 <a
                     className="meetup-sponsor meetup-sponsor__image"
                     href="https://www.fremtind.no"
