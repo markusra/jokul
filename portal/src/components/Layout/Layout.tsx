@@ -34,7 +34,7 @@ export const Layout: React.FC<Props> = ({ children, location, pathContext, pageC
         pathContext?.frontmatter?.title ? `${pathContext.frontmatter.title} - ` : ""
     }Jøkul designsystem`;
     const { theme } = useTheme();
-    const wrapperRef = useRef<HTMLDivElement>(null);
+    const wrapperRef = useRef<HTMLHtmlElement>(null);
     useLayoutEffect(() => {
         wrapperRef.current?.setAttribute("data-theme", theme || "");
     }, [theme, wrapperRef]);
@@ -45,7 +45,11 @@ export const Layout: React.FC<Props> = ({ children, location, pathContext, pageC
 
     if (pageContext?.layout === "meetup") {
         return (
-            <div className="jkl-portal" data-theme={theme} ref={wrapperRef}>
+            <div className="jkl-portal">
+                <Helmet>
+                    <html lang="no-nb" data-theme="dark" />
+                    <title>Meetup - Beyond Design Systems</title>
+                </Helmet>
                 <ThemeBG />
                 <FormatProvider>{children}</FormatProvider>
             </div>
@@ -53,9 +57,9 @@ export const Layout: React.FC<Props> = ({ children, location, pathContext, pageC
     }
 
     return (
-        <div className="jkl-portal" data-theme={theme} ref={wrapperRef}>
+        <div className="jkl-portal">
             <Helmet>
-                <html lang="no-nb" />
+                <html lang="no-nb" data-theme={theme} ref={wrapperRef} />
                 <title>{PageTitle}</title>
             </Helmet>
             <ThemeBG />

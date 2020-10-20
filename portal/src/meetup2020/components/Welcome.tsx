@@ -5,7 +5,7 @@ const Welcome = () => {
     return (
         <div className="row">
             <article className="meetup-welcome meetup-welcome__wrapper">
-                <span className="meetup-welcome meetup-welcome__meeup jkl-heading-large">Meeup</span>
+                <span className="meetup-welcome meetup-welcome__meeup jkl-heading-large">Meetup</span>
                 <span className="meetup-welcome meetup-welcome__good">The good</span>
                 <span className="meetup-welcome meetup-welcome__bad">The bad</span>
                 <span className="meetup-welcome meetup-welcome__bad">The ugly</span>
