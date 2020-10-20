@@ -168,3 +168,15 @@
         margin-bottom: 65px;
     }
 }
+
+.meetup-footer {
+    display: grid;
+    grid-template-columns: 300px 300px auto;
+    .meetup-footer__item {
+        margin: 20px 0;
+    }
+    .meetup-footer__link {
+        display: inline-block;
+        width: 200px;
+    }
+}

@@ -5,7 +5,26 @@ const Program = () => {
     return (
         <div className="row row--topmargin">
             <footer className="meetup-footer">
-                <p>TODO: FOOTER</p>
+                <div className="meetup-footer meetup-footer__item">
+                    <a
+                        className="jkl-link jkl-small meetup-footer meetup-footer__link"
+                        href="https://www.fremtind.no"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Fremtind Forsikering AS
+                    </a>
+                </div>
+                <div className="meetup-footer meetup-footer__item">
+                    <a
+                        className="jkl-link jkl-small meetup-footer meetup-footer__link"
+                        href="https://www.fremtind.no"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Personvern og vilkår
+                    </a>
+                </div>
             </footer>
         </div>
     );
