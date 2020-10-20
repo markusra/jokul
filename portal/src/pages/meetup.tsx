@@ -29,8 +29,8 @@ const Meetup = () => {
             </div>
             <main className="meetup-main">
                 <Welcome />
-                <About />
                 <Play />
+                <About />
                 <Speakers />
                 <Paneldebate />
                 <Program />

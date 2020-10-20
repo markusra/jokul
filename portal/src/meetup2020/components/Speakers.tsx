@@ -32,89 +32,78 @@ const Speaker: FunctionComponent<SpeakerProps> = ({
     medium,
     inverted,
 }) => {
-    const ImageClasses = inverted
-        ? "meetup-speakers meetup-speakers__image meetup-speakers__image--inverted"
-        : "meetup-speakers meetup-speakers__image";
-    const ContentClasses = inverted
-        ? "meetup-speakers meetup-speakers__content meetup-speakers__content--inverted"
-        : "meetup-speakers meetup-speakers__content";
-    const ContentboxClasses = inverted
-        ? "meetup-speakers meetup-speakers__contentbox meetup-speakers__contentbox--inverted"
-        : "meetup-speakers meetup-speakers__contentbox";
     return (
-        <section className="meetup-speakers meetup-speakers__wrapper">
-            <img src={image} className={ImageClasses} alt={name} />
-            <div className={ContentClasses}>
-                <div className={ContentboxClasses}>
-                    <h2>{name}</h2>
-                    <p>
-                        {title}
-                        <br />
-                        {location}
-                    </p>
-                    <p className="meetup-speakers meetup-speakers__slogan">{slogan}</p>
-                    <p>{bio}</p>
-                    <div className="row">
-                        <div className="meetup-speakers meetup-speakers__links-social">
-                            {webpage && (
-                                <div className="meetup-speakers meetup-speakers__link-wrapper">
-                                    <a
-                                        className="meetup-speakers meetup-speakers__link-link"
-                                        href={webpage}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        {webpage}
-                                    </a>
-                                </div>
-                            )}
-                            <div className="meetup-speakers meetup-speakers__social">
-                                {linkedin && (
-                                    <a href={linkedin} title="LinkedIn" target="_blank" rel="noreferrer">
-                                        <img
-                                            className="meetup-speakers meetup-speakers__social-icon"
-                                            src="assets/img/social-in.svg"
-                                            alt="social icon linkedin"
-                                        />
-                                    </a>
-                                )}
-                                {facebook && (
-                                    <a href={facebook} title="Facebook" target="_blank" rel="noreferrer">
-                                        <img
-                                            className="meetup-speakers meetup-speakers__social-icon"
-                                            src="assets/img/social-face.svg"
-                                            alt="social icon facebook"
-                                        />
-                                    </a>
-                                )}
-                                {youtube && (
-                                    <a href={youtube} title="youtube" target="_blank" rel="noreferrer">
-                                        <img
-                                            className="meetup-speakers meetup-speakers__social-icon"
-                                            src="assets/img/social-tube.svg"
-                                            alt="social icon youtube"
-                                        />
-                                    </a>
-                                )}
-                                {twitter && (
-                                    <a href={twitter} title="twitter" target="_blank" rel="noreferrer">
-                                        <img
-                                            className="meetup-speakers meetup-speakers__social-icon"
-                                            src="assets/img/social-twitter.svg"
-                                            alt="social icon twitter"
-                                        />
-                                    </a>
-                                )}
-                                {medium && (
-                                    <a href={medium} title="youtube" target="_blank" rel="noreferrer">
-                                        <img
-                                            className="meetup-speakers meetup-speakers__social-icon"
-                                            src="assets/img/social-medium.svg"
-                                            alt="social icon medium"
-                                        />
-                                    </a>
-                                )}
+        <section className={`meetup-speakers__wrapper ${inverted ? "meetup-speakers__wrapper--flipped" : ""}`}>
+            <img src={image} className="meetup-speakers__image" alt={name} />
+            <div className="meetup-speakers__content">
+                <h3 className="jkl-heading-large">{name}</h3>
+                <p className="jkl-small jkl-layout-spacing--small-bottom">
+                    {title}
+                    <br />
+                    {location}
+                </p>
+                <p className="jkl-title-small jkl-layout-spacing--small-bottom">{slogan}</p>
+                <p className="jkl-body">{bio}</p>
+                <div className="row">
+                    <div className="meetup-speakers meetup-speakers__links-social">
+                        {webpage && (
+                            <div className="meetup-speakers meetup-speakers__link-wrapper">
+                                <a
+                                    className="jkl-link jkl-small"
+                                    href={`https://${webpage}`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {webpage}
+                                </a>
                             </div>
+                        )}
+                        <div className="meetup-speakers meetup-speakers__social">
+                            {linkedin && (
+                                <a href={linkedin} title="LinkedIn" target="_blank" rel="noreferrer">
+                                    <img
+                                        className="meetup-speakers meetup-speakers__social-icon"
+                                        src="assets/img/social-in.svg"
+                                        alt="social icon linkedin"
+                                    />
+                                </a>
+                            )}
+                            {facebook && (
+                                <a href={facebook} title="Facebook" target="_blank" rel="noreferrer">
+                                    <img
+                                        className="meetup-speakers meetup-speakers__social-icon"
+                                        src="assets/img/social-face.svg"
+                                        alt="social icon facebook"
+                                    />
+                                </a>
+                            )}
+                            {youtube && (
+                                <a href={youtube} title="youtube" target="_blank" rel="noreferrer">
+                                    <img
+                                        className="meetup-speakers meetup-speakers__social-icon"
+                                        src="assets/img/social-tube.svg"
+                                        alt="social icon youtube"
+                                    />
+                                </a>
+                            )}
+                            {twitter && (
+                                <a href={twitter} title="twitter" target="_blank" rel="noreferrer">
+                                    <img
+                                        className="meetup-speakers meetup-speakers__social-icon"
+                                        src="assets/img/social-twitter.svg"
+                                        alt="social icon twitter"
+                                    />
+                                </a>
+                            )}
+                            {medium && (
+                                <a href={medium} title="youtube" target="_blank" rel="noreferrer">
+                                    <img
+                                        className="meetup-speakers meetup-speakers__social-icon"
+                                        src="assets/img/social-medium.svg"
+                                        alt="social icon medium"
+                                    />
+                                </a>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -127,13 +116,13 @@ const Speakers = () => {
     return (
         <div className="row row--topmargin">
             <article className="meetup-speakers">
-                <h1>Main Speakers</h1>
+                <h2 className="meetup-heading jkl-title-small jkl-layout-spacing--medium-bottom">Main Speakers</h2>
                 <Speaker
                     image="assets/img/speaker-morgane-big.jpg"
                     name="Morgane Peng"
                     title="Director of User Experience at Societe Generale"
                     location="United Kingdom"
-                    slogan="Vision and Streategy"
+                    slogan="Vision and Strategy"
                     bio="Morgane Peng is responsible for the design vision and strategy of Societe Generale Corporate & Investment Banking. She delivers united and meaningful experiences with her team across Societe Generale products for start-ups, corporates and financial institutions."
                     webpage="morganepeng.com"
                     linkedin="https://www.linkedin.com/in/morganepeng/"

@@ -8,7 +8,7 @@ const Play = () => {
                 <button
                     onClick={() => window.open("https://vimeo.com/459349631/4f79d04d51", "_blank")}
                     type="button"
-                    className="meetup-play meetup-play__button"
+                    className="meetup-play__button"
                 >
                     <img src="assets/img/play.svg" alt="Play Jøkul movie" />
                 </button>
