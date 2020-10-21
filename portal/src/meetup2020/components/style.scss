@@ -81,18 +81,34 @@
 
 .meetup-speakers {
     &__wrapper {
-        padding: $layout-spacing--large 0;
-        background-image: linear-gradient(90deg, transparent 0 30%, #{$gra-100} 30% 100%);
-
-        display: grid;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        grid-template-columns: 40% 1fr;
-        grid-template-areas: "image info";
+        padding: 0 $layout-spacing--small;
+        background-image: linear-gradient(180deg, transparent 0 30%, #{$gra-100} 30% 100%);
 
-        &--flipped {
-            background-image: linear-gradient(-90deg, transparent 0 30%, #{$gra-100} 30% 100%);
-            grid-template-columns: 1fr 40%;
-            grid-template-areas: "info image";
+        @include from-medium-device {
+            background-image: linear-gradient(90deg, transparent 0 30%, #{$gra-100} 30% 100%);
+
+            display: grid;
+            align-items: center;
+            grid-template-columns: 40% 1fr;
+            grid-template-areas: "image info";
+
+            &--flipped {
+                background-image: linear-gradient(-90deg, transparent 0 30%, #{$gra-100} 30% 100%);
+                grid-template-columns: 1fr 40%;
+                grid-template-areas: "info image";
+            }
+        }
+
+        @include medium-device {
+            padding: $layout-spacing--medium 0;
+        }
+
+        @include from-large-device {
+            padding: $layout-spacing--large 0;
         }
 
         &:not(:last-of-type) {
@@ -100,13 +116,30 @@
         }
     }
     &__image {
-        display: block;
         width: 100%;
-        grid-area: image;
+        display: block;
+
+        @include small-device {
+            max-height: 70vw;
+            width: auto;
+        }
+
+        @include from-medium-device {
+            grid-area: image;
+        }
     }
     &__content {
-        grid-area: info;
-        padding: $layout-spacing--medium $layout-spacing--xl;
+        box-sizing: border-box;
+        padding: $layout-spacing--large 0 $layout-spacing--small;
+
+        @include from-medium-device {
+            grid-area: info;
+            padding: $layout-spacing--small $layout-spacing--medium;
+        }
+
+        @include from-large-device {
+            padding: $layout-spacing--medium $layout-spacing--xl;
+        }
     }
     &.meetup-speakers__slogan {
         font-size: 48px;
