@@ -20,9 +20,14 @@ const About = () => {
                     Join us for an exciting look at the inside of a few design systems and the efforts made to make them
                     great.
                 </p>
-                <button className="jkl-button jkl-button--secondary jkl-button--inverted jkl-layout-spacing--medium-top">
+                <a
+                    href="https://www.meetup.com/Fremtind/events/274057345"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="jkl-button jkl-button--secondary jkl-button--inverted jkl-layout-spacing--medium-top"
+                >
                     Register now
-                </button>
+                </a>
             </div>
         </article>
     );

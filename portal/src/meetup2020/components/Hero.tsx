@@ -10,9 +10,14 @@ const Hero = () => {
                     <br />
                     Systems 2020
                 </h1>
-                <button className="meetup-hero meetup-hero__button jkl-button jkl-button--compact jkl-button--secondary jkl-button--inverted">
+                <a
+                    href="https://www.meetup.com/Fremtind/events/274057345"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="meetup-hero meetup-hero__button jkl-button jkl-button--compact jkl-button--secondary jkl-button--inverted"
+                >
                     Register now
-                </button>
+                </a>
             </section>
         </div>
     );

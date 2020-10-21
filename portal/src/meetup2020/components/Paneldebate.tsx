@@ -10,6 +10,7 @@ const Paneldebate = () => {
                     A panel debate with questions from the audience and the moderator.
                 </p>
                 <div className="meetup-paneldebate meetup-paneldebate__grid-container">
+                    {/* 
                     <div className="meetup-paneldebate meetup-paneldebate__grid-container meetup-paneldebate__item meetup-paneldebate__item1">
                         <a
                             className="meetup-paneldebate__link"
@@ -28,6 +29,7 @@ const Paneldebate = () => {
                             </figcaption>
                         </a>
                     </div>
+                    */}
                     <div className="meetup-paneldebate meetup-paneldebate__grid-container meetup-paneldebate__item meetup-paneldebate__item2">
                         <a
                             className="meetup-paneldebate__link"

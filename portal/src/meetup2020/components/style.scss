@@ -37,6 +37,11 @@
         margin-left: 126px;
         width: 420px;
         margin-top: 130px;
+        @media screen and (max-width: 800px) {
+            margin-left: 20px;
+            width: 100%;
+            margin-top: 20px;
+        }
     }
     &__meetup {
         display: block;
@@ -126,17 +131,28 @@
 .meetup-paneldebate {
     &.meetup-paneldebate__slogan {
         margin: 40px 100px;
+        @media screen and (max-width: 800px) {
+            margin: 40px 0;
+        }
     }
     &.meetup-paneldebate__grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto;
         grid-gap: 0;
         padding: 0;
+        /*
         &.meetup-paneldebate__item1 {
             height: 472px;
             grid-area: 1 / 1 / span 3 / span 1;
         }
-        grid-template-columns: 472px 236px 236px 236px;
+        */
+        grid-template-columns: 236px 236px 236px;
+        grid-gap: 90px;
+        @media screen and (max-width: 800px) {
+            grid-template-columns: auto;
+            grid-gap: 30px;
+            margin-left: 30px;
+        }
     }
     .meetup-paneldebate__item {
         position: relative;
