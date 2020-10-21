@@ -18,7 +18,7 @@ const Welcome = () => {
                     href="https://www.meetup.com/Fremtind/events/274057345"
                     target="_blank"
                     rel="noreferrer"
-                    className="jkl-button jkl-button--primary jkl-button--inverted"
+                    className="meetup-button-link jkl-button jkl-button--primary jkl-button--inverted"
                 >
                     Register now
                 </a>

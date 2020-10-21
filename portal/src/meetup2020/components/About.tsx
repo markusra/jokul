@@ -24,7 +24,7 @@ const About = () => {
                     href="https://www.meetup.com/Fremtind/events/274057345"
                     target="_blank"
                     rel="noreferrer"
-                    className="jkl-button jkl-button--secondary jkl-button--inverted jkl-layout-spacing--medium-top"
+                    className="meetup-button-link jkl-button jkl-button--secondary jkl-button--inverted jkl-layout-spacing--medium-top"
                 >
                     Register now
                 </a>
