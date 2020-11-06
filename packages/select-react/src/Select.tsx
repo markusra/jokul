@@ -1,6 +1,7 @@
 // @ts-ignore: wait for core-components to expose types
 import CoreToggle from "@nrk/core-toggle/jsx";
-import React, { FocusEvent, useRef, useState } from "react";
+import React, { FocusEvent, useEffect, useMemo, useRef, useState } from "react";
+import FuzzySearch from "fuzzy-search";
 import { nanoid } from "nanoid";
 import { Label, LabelVariant, SupportLabel, ValuePair, getValuePair, DataTestAutoId } from "@fremtind/jkl-core";
 import { useAnimatedHeight } from "@fremtind/jkl-react-hooks";
@@ -72,14 +73,25 @@ export function Select({
     width,
     ...selectProps
 }: Props) {
+    const fuzzySearcher = useMemo(() => new FuzzySearch(items.map(getValuePair), ["value", "label"]), [items]);
+
     const [searchValue, setSearchValue] = useState("");
     const hasSelectedValue = typeof value !== "undefined" && value !== "";
 
-    const visibleItems = items.map(getValuePair).map((item) => {
+    const [visibleItems, setVisibleItems] = useState(items.map(getValuePair));
+    useEffect(() => {
+        if (!searchable || searchValue === "") {
+            setVisibleItems(items.map(getValuePair));
+        } else {
+            setVisibleItems(fuzzySearcher.search(searchValue));
+        }
+    }, [searchValue, fuzzySearcher, items, searchable]);
+
+    /* const visibleItems = items.map(getValuePair).map((item) => {
         const visible =
             !searchable || searchValue === "" || item.label.toLowerCase().indexOf(searchValue.toLowerCase()) > -1;
         return { ...item, visible };
-    });
+    }); */
     const selectedValueLabel = visibleItems.find((item) => item.value === value)?.label || defaultPrompt;
 
     const searchRef = useRef<HTMLInputElement>(null);
@@ -202,7 +214,7 @@ export function Select({
                         ref={listRef}
                     >
                         {visibleItems.map((item, i) => (
-                            <li key={item.value} hidden={!item.visible}>
+                            <li key={item.value} /* hidden={!item.visible} */>
                                 <button
                                     type="button"
                                     id={`${listId}__${toLower(item.value)}`}

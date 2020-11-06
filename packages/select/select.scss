@@ -140,7 +140,7 @@ $select-error-color--inverted: $feil--darkbg;
     &__arrow {
         position: absolute;
         right: $component-spacing--large;
-        top: 50%;
+        top: 100%;
         transform: translateY(-50%);
         color: inherit;
     }
